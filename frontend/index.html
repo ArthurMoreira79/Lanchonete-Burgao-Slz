@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Burgão-Slz | Lanchonete</title>
+<meta name="description" content="Burgão-Slz — hambúrgueres, cachorro-quente, macarronadas e lasanhas feitos na hora em São Luís.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='78' font-size='78'%3E%F0%9F%8D%94%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Staatliches&family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="stamp-badge" role="img" aria-label="Selo Burgão-Slz: qualidade garantida, feito na hora">
+      <svg class="stamp-svg" viewBox="0 0 240 240" aria-hidden="true">
+        <circle cx="120" cy="120" r="112"></circle>
+        <circle cx="120" cy="120" r="95"></circle>
+        <path id="arcoTopo" d="M28,132 A92,92 0 1 1 212,132" fill="none"></path>
+        <path id="arcoBase" d="M44,142 A92,92 0 1 0 196,142" fill="none"></path>
+        <text class="stamp-text">
+          <textPath href="#arcoTopo" startOffset="50%" text-anchor="middle">QUALIDADE GARANTIDA</textPath>
+        </text>
+        <text class="stamp-text small">
+          <textPath href="#arcoBase" startOffset="50%" text-anchor="middle">★ FEITO NA HORA ★</textPath>
+        </text>
+        <g class="burger-icon" transform="translate(120,116)">
+          <path d="M-38,-8 Q-38,-32 0,-32 Q38,-32 38,-8 Z"></path>
+          <circle class="miolo" cx="-15" cy="-19" r="2.4"></circle>
+          <circle class="miolo" cx="0" cy="-22" r="2.4"></circle>
+          <circle class="miolo" cx="15" cy="-19" r="2.4"></circle>
+          <path d="M-38,-2 q6,6 12,0 q6,6 12,0 q6,6 12,0 q6,6 12,0 q6,6 12,0"></path>
+          <rect x="-38" y="3" width="76" height="10" rx="5"></rect>
+          <path d="M-34,19 Q0,38 34,19 L34,15 L-34,15 Z"></path>
+        </g>
+      </svg>
+    </div>
+    <h1 class="wordmark">Burgão-Slz</h1>
+    <p class="slogan">O sabor que conquistou São Luís!</p>
+    <div class="ticket-divider" aria-hidden="true">
+      <span class="furo"></span><span class="linha"></span><span class="furo"></span>
+    </div>
+  </div>
+</header>
+
+<nav class="category-nav" aria-label="Categorias do cardápio">
+  <ul>
+    <li><a href="#hamburgueres">Hambúrgueres</a></li>
+    <li><a href="#cachorro-quente">Cachorro-Quente</a></li>
+    <li><a href="#macarronadas">Macarronadas</a></li>
+    <li><a href="#lasanhas">Lasanhas</a></li>
+    <li><a href="#bebidas">Bebidas</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section id="hamburgueres" class="categoria">
+    <div class="cabecalho-categoria">
+      <span class="icone" aria-hidden="true"></span>
+      <div><span class="eyebrow">No pão e na brasa</span><h2>Hambúrgueres</h2></div>
+    </div>
+    <div class="grade-itens" data-categoria="hamburgueres"></div>
+  </section>
+
+  <section id="cachorro-quente" class="categoria">
+    <div class="cabecalho-categoria">
+      <span class="icone" aria-hidden="true"></span>
+      <div><span class="eyebrow">Clássico de balcão</span><h2>Cachorro-Quente</h2></div>
+    </div>
+    <div class="grade-itens" data-categoria="dogs"></div>
+  </section>
+
+  <section id="macarronadas" class="categoria">
+    <div class="cabecalho-categoria">
+      <span class="icone" aria-hidden="true"></span>
+      <div><span class="eyebrow">Pra matar a fome</span><h2>Macarronadas</h2></div>
+    </div>
+    <div class="grade-itens" data-categoria="macarronadas"></div>
+  </section>
+
+  <section id="lasanhas" class="categoria">
+    <div class="cabecalho-categoria">
+      <span class="icone" aria-hidden="true"></span>
+      <div><span class="eyebrow">Camada sobre camada</span><h2>Lasanhas</h2></div>
+    </div>
+    <div class="grade-itens" data-categoria="lasanhas"></div>
+  </section>
+
+  <section id="bebidas" class="categoria">
+    <div class="cabecalho-categoria">
+      <span class="icone" aria-hidden="true"></span>
+      <div><span class="eyebrow">Pra acompanhar</span><h2>Bebidas</h2></div>
+    </div>
+    <div class="grade-bebidas" data-bebidas></div>
+  </section>
+</main>
+
+<button class="botao-comanda" id="botaoComanda" aria-haspopup="true" aria-controls="painelComanda">
+   Comanda <span class="contagem" id="contagemComanda">0</span>
+</button>
+
+<div class="overlay" id="overlay"></div>
+
+<aside class="painel-comanda" id="painelComanda" aria-label="Sua comanda">
+  <div class="painel-cabecalho">
+    <h2>Sua Comanda</h2>
+    <button id="fecharComanda" aria-label="Fechar comanda">×</button>
+  </div>
+  <div class="lista-comanda" id="listaComanda">
+    <p class="comanda-vazia">Sua comanda está vazia.<br>Adicione algo gostoso do cardápio!</p>
+  </div>
+  <div class="rodape-comanda">
+    <div class="linha-total"><span>Total</span><span id="totalComanda">R$ 0,00</span></div>
+    <button class="botao-finalizar" id="finalizarPedido">Finalizar Pedido</button>
+  </div>
+</aside>
+
+<div class="toast" id="toast"></div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="grade-footer">
+      <div>
+        <h3>Fale com a gente</h3>
+        <p class="contato-linha"> <a href="mailto:contato@burgaoslz.com.br">contato@burgaoslz.com.br</a></p>
+        <p class="contato-linha"> <a href="tel:+5598999999999">(98) 99999-9999</a></p>
+        <p class="contato-linha" style="opacity:.7; font-size:.8rem;">* dados de contato fictícios — edite com as suas informações reais.</p>
+      </div>
+      <div>
+        <h3>Burgão-Slz</h3>
+        <p style="opacity:.85;">Hambúrgueres, cachorro-quente, macarronadas e lasanhas feitos na hora, com o sabor que São Luís já aprovou.</p>
+      </div>
+    </div>
+    <div class="linha-dev">
+      Criado por <a href="https://github.com/ArthurMoreira79" target="_blank" rel="noopener noreferrer">Arthur Moreira</a> · © <span id="anoAtual"></span> Burgão-Slz
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
