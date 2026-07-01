@@ -1,0 +1,8 @@
+spring.datasource.url=jdbc:mysql://localhost:3306/burgao_slz
+spring.datasource.username=SEU_USUARIO
+spring.datasource.password=SUA_SENHA
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+
+server.port=8080
